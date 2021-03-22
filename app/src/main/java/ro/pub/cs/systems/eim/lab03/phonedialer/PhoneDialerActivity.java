@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,8 +33,10 @@ public class PhoneDialerActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             String s = phoneNumberEditText.getText().toString();
-            s = s.substring(0, s.length() - 1);
-            phoneNumberEditText.setText(s);
+            if (s.length() > 0) {
+                s = s.substring(0, s.length() - 1);
+                phoneNumberEditText.setText(s);
+            }
         }
     }
     BackspaceImageButtonListener backspaceImageButtonListener = new BackspaceImageButtonListener();
@@ -69,6 +72,7 @@ public class PhoneDialerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_dialer);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         button = (Button)findViewById(R.id.digit_1);
         button.setOnClickListener(buttonListener);

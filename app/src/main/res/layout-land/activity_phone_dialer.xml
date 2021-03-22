@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="16sp"
+    android:layout_marginRight="16sp"
+    android:layout_marginLeft="16sp"
+    android:layout_marginBottom="16sp"
+    tools:context=".PhoneDialerActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"/>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rowCount="3"
+        android:columnCount="5"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/digit_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16sp"
+            android:text="1"/>
+
+        <Button
+            android:id="@+id/digit_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16sp"
+            android:text="2"/>
+
+        <Button
+            android:id="@+id/digit_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16sp"
+            android:text="3"/>
+
+        <Button
+            android:id="@+id/digit_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16sp"
+            android:text="4"/>
+
+        <Button
+            android:id="@+id/digit_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"/>
+
+        <Button
+            android:id="@+id/digit_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6"/>
+
+        <Button
+            android:id="@+id/digit_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7"/>
+
+        <Button
+            android:id="@+id/digit_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8"/>
+
+        <Button
+            android:id="@+id/digit_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9"/>
+
+        <Button
+            android:id="@+id/digit_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"/>
+
+        <ImageButton
+            android:id="@+id/call_image_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:src="@drawable/call"/>
+
+        <Button
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"/>
+
+        <ImageButton
+            android:id="@+id/backspace_image_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/backspace"/>
+
+        <Button
+            android:id="@+id/hashtag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#"/>
+
+
+        <ImageButton
+            android:id="@+id/hangup_image_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:src="@drawable/hangup"/>
+
+    </GridLayout>
+
+</LinearLayout>
