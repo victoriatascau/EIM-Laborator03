@@ -29,7 +29,7 @@
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:rowCount="3"
+        android:rowCount="4"
         android:columnCount="5"
         android:layout_gravity="center">
 
@@ -130,6 +130,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:src="@drawable/hangup"/>
+
+        <ImageButton
+            android:id="@+id/contacts_manager_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_column="2"
+            android:src="@drawable/contacts"/>
 
     </GridLayout>
 

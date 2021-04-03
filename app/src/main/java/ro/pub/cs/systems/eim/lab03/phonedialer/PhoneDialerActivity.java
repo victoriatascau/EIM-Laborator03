@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class PhoneDialerActivity extends AppCompatActivity {
 
@@ -68,6 +69,22 @@ public class PhoneDialerActivity extends AppCompatActivity {
     }
     HangupImageButtonListener hangupImageButtonListener = new HangupImageButtonListener();
 
+    private ImageButton contactsManagerImageButton;
+    private class ContactsManagerImageButtonListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            String phoneNumber = phoneNumberEditText.getText().toString();
+            if (phoneNumber.length() > 0) {
+                Intent intent = new Intent("ro.pub.cs.systems.eim.lab04.contactsmanager.intent.action.ContactsManagerActivity");
+                intent.putExtra("ro.pub.cs.systems.eim.lab04.contactsmanager.PHONE_NUMBER_KEY", phoneNumber);
+                startActivityForResult(intent, Constants.CONTACTS_MANAGER_REQUEST_CODE);
+            } else {
+                Toast.makeText(getApplication(), "PHONE ERROR", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+    ContactsManagerImageButtonListener contactsManagerImageButtonListener = new ContactsManagerImageButtonListener();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +126,19 @@ public class PhoneDialerActivity extends AppCompatActivity {
         hangupImageButton.setOnClickListener(hangupImageButtonListener);
 
         phoneNumberEditText = (EditText)findViewById(R.id.edit_text);
+
+        contactsManagerImageButton = (ImageButton)findViewById(R.id.contacts_manager_button);
+        contactsManagerImageButton.setOnClickListener(contactsManagerImageButtonListener);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        switch (requestCode) {
+            case Constants.CONTACTS_MANAGER_REQUEST_CODE:
+                Toast.makeText(this, "Activity returned with result " + resultCode, Toast.LENGTH_LONG).show();
+                break;
+        }
     }
 
 }

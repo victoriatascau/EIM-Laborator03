@@ -128,16 +128,21 @@
             android:id="@+id/call_image_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            android:layout_gravity="center"
             android:src="@drawable/call"/>
 
-        <Space></Space>
+        <ImageButton
+            android:id="@+id/contacts_manager_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/contacts"/>
 
         <ImageButton
             android:id="@+id/hangup_image_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="center"
             android:src="@drawable/hangup"/>
 
     </GridLayout>
